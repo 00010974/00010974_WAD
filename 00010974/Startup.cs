@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _00010974.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace _00010974
 {
@@ -26,8 +27,7 @@ namespace _00010974
         {
             //DbContext configuration
 
-            services.AddDbContext<AppDbContext>();
-
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddControllersWithViews();
         }
 

@@ -16,6 +16,7 @@ namespace _00010974.Models
         public string Series { get; set; }
         public int Price { get; set; }
         public Genre Genre { get; set; }
+        public string PublishingHouse { get; set; }
         public string Description { get; set; }
 
         //Relationships
