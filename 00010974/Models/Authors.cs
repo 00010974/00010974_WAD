@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace _00010974.Models
@@ -7,8 +8,11 @@ namespace _00010974.Models
     {
         [Key]
         public int Id { get; set; }
+        [DisplayName("Author Picture")]
         public string AuthorPicture { get; set; }
-        public string FullName { get; set; }  
+        [DisplayName("Author Name")]
+        public string FullName { get; set; }
+        [DisplayName("Author Books")]
         public string AuthorBooks { get; set; }
 
         //Relationships
