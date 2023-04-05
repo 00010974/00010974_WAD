@@ -2,41 +2,39 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace _00010974.Controllers
 {
-    public class AuthorsController : Controller
+    public class BooksController : Controller
     {
         private readonly AppDbContext _context;
 
-        public AuthorsController(AppDbContext context)
+        public BooksController(AppDbContext context)
         {
             _context = context;
         }
 
-
-        // GET: AuthorsController
+        // GET: BooksController
         public async Task<ActionResult> Index()
         {
-            var allAuthors = await _context.Authors.ToListAsync();
+            //var allAuthors = await _context.Books.ToListAsync();
             return View();
         }
 
-        // GET: AuthorsController/Details/5
+        // GET: BooksController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: AuthorsController/Create
+        // GET: BooksController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AuthorsController/Create
+        // POST: BooksController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -51,13 +49,13 @@ namespace _00010974.Controllers
             }
         }
 
-        // GET: AuthorsController/Edit/5
+        // GET: BooksController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: AuthorsController/Edit/5
+        // POST: BooksController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -72,13 +70,13 @@ namespace _00010974.Controllers
             }
         }
 
-        // GET: AuthorsController/Delete/5
+        // GET: BooksController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: AuthorsController/Delete/5
+        // POST: BooksController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

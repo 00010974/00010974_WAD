@@ -1,10 +1,10 @@
-﻿@model IEnumerable<_00010974.Models.Authors>
+﻿@model IEnumerable<_00010974.Models.Publishers>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Publishers List";
 }
 
-<h1>Index</h1>
+<h1>Publishers</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -16,13 +16,10 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AuthorPicture)
+                @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AuthorBooks)
+                @Html.DisplayNameFor(model => model.Bio)
             </th>
             <th></th>
         </tr>
@@ -30,7 +27,6 @@
     <tbody>
         @if (Model != null)
         {
-
             @foreach (var item in Model)
             {
                 <tr>
@@ -38,13 +34,10 @@
                         @Html.DisplayFor(modelItem => item.Id)
                     </td>
                     <td>
-                        <img class="rounded" src="@item.AuthorPicture" alt="@item.FullName" max-width"150px" />
+                        @Html.DisplayFor(modelItem => item.Title)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.FullName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AuthorBooks)
+                        @Html.DisplayFor(modelItem => item.Bio)
                     </td>
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
@@ -53,6 +46,7 @@
                     </td>
                 </tr>
             }
+
         }
     </tbody>
 </table>
