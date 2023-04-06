@@ -57,6 +57,10 @@ namespace _00010974
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //seed database
+            AppDBInitializer.Seed(app);
+
         }
     }
 }

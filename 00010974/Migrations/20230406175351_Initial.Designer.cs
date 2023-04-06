@@ -9,7 +9,7 @@ using _00010974.Data;
 namespace _00010974.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230402172143_Initial")]
+    [Migration("20230406175351_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,8 +69,8 @@ namespace _00010974.Migrations
                     b.Property<string>("PublishingHouse")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Series")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Series")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");

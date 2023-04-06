@@ -1,52 +1,36 @@
-﻿@model IEnumerable<_00010974.Models.Publishers>
+﻿@model IEnumerable<Publishers>
 
 @{
-    ViewData["Title"] = "Publishers List";
+    ViewData["Title"] = "List of publishers";
 }
 
 <h1>Publishers</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="text-align: center">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bio)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+        <th>@Html.DisplayNameFor(model => model.Bio)</th>
+        <th>Actions</th>
+    </tr>
     </thead>
     <tbody>
-        @if (Model != null)
-        {
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Bio)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>
-                </tr>
-            }
 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">@Html.DisplayFor(modelItem => item.Title)</td>
+                <td class="align-middle">@Html.DisplayFor(modelItem => item.Bio)</td>
+                <td class="align-middle" style="width: 247px;">
+                    <a asp-action="Edit" class="btn btn-outline-primary">Edit</a> |       
+                    <a asp-action="Details" class="btn btn-outline-warning">Details</a> |
+                    <a asp-action="Delete" class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
         }
+    
     </tbody>
 </table>

@@ -44,7 +44,7 @@ namespace _00010974.Migrations
                     ImgUrl = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
                     AuthorName = table.Column<string>(nullable: true),
-                    Series = table.Column<string>(nullable: true),
+                    Series = table.Column<int>(nullable: false),
                     Price = table.Column<int>(nullable: false),
                     Genre = table.Column<int>(nullable: false),
                     PublishingHouse = table.Column<string>(nullable: true),

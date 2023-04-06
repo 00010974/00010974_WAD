@@ -1,58 +1,44 @@
-﻿@model IEnumerable<_00010974.Models.Authors>
+﻿@model IEnumerable<Authors>
 
 @{
-    ViewData["Title"] = "List of Authors";
+    ViewData["Title"] = "List of authors";
 }
 
 <h1>Authors</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="text-align: center">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AuthorPicture)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AuthorBooks)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.AuthorPicture)</th>
+        <th>@Html.DisplayNameFor(model => model.FullName)</th>
+        <th>@Html.DisplayNameFor(model => model.AuthorBooks)</th>
+        <th>Actions</th>
+    </tr>
     </thead>
     <tbody>
-        @if (Model != null)
-        {
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        <img class="rounded" src="@item.AuthorPicture" alt="@item.FullName" max-width"150px" />
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FullName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AuthorBooks)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                    </td>
-                </tr>
-            }
-        }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="align-middle">
+                <img class="rounded" src="@item.AuthorPicture" alt="@item.FullName" style="max-width: 150px;"/>
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.AuthorBooks)
+            </td>
+                <td class="align-middle" style="vertical-align: middle; width: 247px;">
+                <a asp-action="Edit" class="btn btn-outline-primary">Edit</a> |       
+                <a asp-action="Details" class="btn btn-outline-secondary">Details</a> |
+                <a asp-action="Delete" class="btn btn-outline-danger">Delete</a>
+            </td>
+        </tr>
+    }
+    
     </tbody>
 </table>

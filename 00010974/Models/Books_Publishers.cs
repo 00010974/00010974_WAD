@@ -1,4 +1,4 @@
-﻿namespace _00010974.Models
+﻿ namespace _00010974.Models
 {
     public class Books_Publishers
     {
@@ -6,5 +6,6 @@
         public Books Books { get; set; }
         public int PublishersId { get; set; }
         public Publishers Publishers { get; set; }
+
     }
 }
