@@ -18,7 +18,7 @@ namespace _00010974.Controllers
         // GET: BooksController
         public async Task<ActionResult> Index()
         {
-            var allAuthors = await _context.Books.ToListAsync();
+            //var allAuthors = await _context.Books.ToListAsync();
             return View();
         }
 
