@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _00010974.Data;
+using _00010974.Data.Repos;
+using _00010974.Data.Service;
 using Microsoft.EntityFrameworkCore;
 
 namespace _00010974
@@ -28,6 +30,12 @@ namespace _00010974
             //DbContext configuration
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+           
+            //Service configuration 
+            services.AddScoped<IPublisherRepos, PublishersRepos>();
+            services.AddScoped<IAuthorsRepos, AuthorsRepos>();
+            services.AddScoped<IBooksRepos, BooksRepos>();
+
             services.AddControllersWithViews();
         }
 

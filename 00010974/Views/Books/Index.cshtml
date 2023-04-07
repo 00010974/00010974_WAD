@@ -13,10 +13,10 @@
     @foreach (var item in Model)
     {
         <div class="col-md-4 col-xs-12 rounded md-3">
-                    <div class="card mb-3" style="max-width: 450px;">
+                    <div class="card mb-3" style="max-width: 500px;">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="card-header text-white bg-dark">
+                        <div class="card-header text-white bg-dark" style="padding: 0.25rem 1.25rem;">
                                     <p class="card-text">
                                         <h5 class="card-title">
                                             @item.Title
@@ -26,9 +26,10 @@
                             </div>
                             <div class="col-md-6 rounded">
                                 <img src="@item.ImgUrl" width="100%" alt="@item.Title">
-                            </div>
+                            </div>  
+
                             <div class="col-md-6">
-                                <div class="card-body">
+                                <div class="card-body" style="padding: 0.55rem;">
                                     <p class="card-text"><b>Author Name: </b>@item.AuthorName</p>
                                     <p class="card-text"><b>Genre: </b>@item.Genre</p>
                                 <p class="card-text"><b>Series: </b>@item.Series</p>
@@ -58,3 +59,17 @@
             
     }
 </div>
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+            var output = document.getElementById('ImgUrl');
+            output.src = $("#ImgUrl").val();
+        })
+
+        $("#ImgUrl").on("change", function () {
+            var output = document.getElementById('ImgUrl');
+            output.src = $(this).val();
+        })
+    </script>
+}

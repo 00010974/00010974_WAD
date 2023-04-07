@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using _00010974.Data.Base;
 
 namespace _00010974.Models
 {
-    public class Publishers
+    public class Publishers:IEntityBase
     {
         [Key] 
         public int Id { get; set; }
